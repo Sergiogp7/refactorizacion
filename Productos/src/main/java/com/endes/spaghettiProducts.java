@@ -1,5 +1,7 @@
 package com.endes;
 
+import java.util.ArrayList;
+
 public class spaghettiProducts {
     private String[] productNames = new String[3];
     private double[] productPrices = new double[3];
@@ -22,8 +24,8 @@ public class spaghettiProducts {
                 System.out.println("Producto agregado: " + name);
             } else {
                 System.out.println("Límite de array alcanzado. Convirtiendo a lista...");
-                java.util.List namesList = new java.util.ArrayList<>();
-                java.util.List pricesList = new java.util.ArrayList<>();
+                ArrayList<Object> namesList = new ArrayList<>();
+                ArrayList<Object> pricesList = new ArrayList<>();
                 for (int i = 0; i < productCount; i++) {
                     namesList.add(productNames[i]);
                     pricesList.add(productPrices[i]);
@@ -75,14 +77,5 @@ public class spaghettiProducts {
         }
     }
 
-    public static void main(String[] args) {
-        spaghettiProducts sp = new spaghettiProducts();
-        sp.addProduct("Monitor", 250);
-        sp.addProduct("Teclado", 50);
-        sp.addProduct("Mouse", 25);
-        sp.addProduct("Impresora", 150); // Debería activar la conversión de arrays a listas
-        sp.listProducts();
-        sp.findProduct("Teclado");
-        sp.findProduct("Scanner"); // Producto inexistente para provocar error
-    }
+    
 }
